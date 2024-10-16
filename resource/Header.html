@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <div class="bars">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href="#" class="active">Inicio</a>
+                </li>
+                <li>
+                    <a href="#"> Blog</a>
+                </li>
+                <li>
+                    <a href="../Conection/edit.php"> Operaciones</a>
+                </li>
+                <li>
+                    <a href="../Conection/logout.php" style="background-color: red; color: #ffffff;">Cerrar Sesion</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <?php
+    session_start();
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: login.php');
+        exit;
+    }
+    echo "Bienvenido, " . $_SESSION['nombre'];
+    ?>
+    <script src="script.js"></script>
+</body>
+</html>
