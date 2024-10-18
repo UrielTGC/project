@@ -1,5 +1,7 @@
 // script.js
-
+        document.addEventListener("contextmenu", function(e) {
+          e.preventDefault();
+        });
 const cards = document.querySelectorAll('.memory-card');
 const attemptsElement = document.getElementById('attempts');
 const resetBtn = document.getElementById('reset-btn');
